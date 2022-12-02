@@ -39,7 +39,7 @@ describe('#script', () => {
 
         it('returns the string with given hex colour', () => {
             const actual = getText("#FOO");
-            const expected = '<li class="list-group-item">#BAR</li>'
+            const expected = '<li class="list-group-item">#FOO</li>'
         
             expect(actual).toBe(expected);
         });
@@ -75,7 +75,7 @@ describe('#script', () => {
 
             fireEvent.click(button);
 
-            expect(welcomeHeading).toBeVisible();
+            expect(welcomeHeading).not.toBeVisible();
         });
         it('unhide button shows the welcome text', () => {
             // put test here
