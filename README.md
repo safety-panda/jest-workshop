@@ -60,6 +60,9 @@ press return
 6.see the fun ui in the test file
 it will show the one of the test blocks is passing and the other two tests are failing
 
+## DOM mocking
+you will see that in the tests only the parts of the HTML template that are needed for the test are mocked. this is because we only need the essential parts, and removing the non-essential parts makes it easier to see what is being tested
+
 ## Tasks
 1. fix the failing test for #getText 'returns the string with given hex colour'
 
@@ -67,5 +70,14 @@ it will show the one of the test blocks is passing and the other two tests are f
 
 3. add a test for #loadButtonActions 'unhide button shows the welcome text'
 
-## DOM mocking
-you will see that in the tests only the parts of the HTML template that are needed for the test are mocked. this is because we only need the essential parts, and removing the non-essential parts makes it easier to see what is being tested
+3. add a test for #loadButtonActions 'make welcome text pink'
+4. add a test for #loadButtonActions 'make welcome text gray'
+_tip: look for a good matcher in [jest-dom docs](https://github.com/testing-library/jest-dom)_
+
+5. add a test for #addColourHistory 'append is called with colour html string'
+<details>
+<summary>click me for a hint</summary>
+you can create a variable with a [jest mock function](https://jestjs.io/docs/mock-function-api) for a jquery function (like `.append()`)
+from here you can use the [jest expect methods](https://jestjs.io/docs/expect) to test if this mock function has been called, how many times, and with what argument
+</details>
+
