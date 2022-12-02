@@ -1,6 +1,5 @@
 function changeHeadingColour(colourString) {
     document.getElementById("welcomeHeading").style.color = colourString;
-    $("#welcomeHeading").css("background-color", "yellow");
 }
 
 function getText(colour) {

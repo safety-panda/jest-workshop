@@ -78,7 +78,23 @@ describe('#script', () => {
             expect(welcomeHeading).not.toBeVisible();
         });
         it('unhide button shows the welcome text', () => {
-            // put test here
+            document.body.innerHTML = `
+            <body class="container">
+                <h1 id="welcomeHeading" style="display: none;">welcome to the django jquery test site</h1>
+                <button type="button" id="unhideBtn">Unhide Welcome Text</button>
+            </body>
+            `;
+
+            loadButtonActions();
+
+            const button = document.querySelector('#unhideBtn');
+            const welcomeHeading = document.querySelector('#welcomeHeading');
+
+            expect(welcomeHeading).not.toBeVisible();
+
+            fireEvent.click(button);
+
+            expect(welcomeHeading).toBeVisible();
         });
     });
 });
