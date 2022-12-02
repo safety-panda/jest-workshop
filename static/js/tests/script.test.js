@@ -96,6 +96,65 @@ describe('#script', () => {
 
             expect(welcomeHeading).toBeVisible();
         });
+        it('make welcome text pink', () => {
+            document.body.innerHTML = `
+            <body class="container">
+                <h1 id="welcomeHeading">welcome to the django jquery test site</h1>
+                <button type="button" id="pinkBtn">Make Pink</button>
+            </body>
+            `;
+
+            loadButtonActions();
+
+            const button = document.querySelector('#pinkBtn');
+            const welcomeHeading = document.querySelector('#welcomeHeading');
+
+            fireEvent.click(button);
+
+            expect(welcomeHeading).toHaveStyle("color: PaleVioletRed;");
+        });  
+        it('make welcome text gray', () => {
+            document.body.innerHTML = `
+            <body class="container">
+                <h1 id="welcomeHeading">welcome to the django jquery test site</h1>
+                <button type="button" id="greyBtn">Make Gray</button>
+            </body>
+            `;
+
+            loadButtonActions();
+
+            const button = document.querySelector('#greyBtn');
+            const welcomeHeading = document.querySelector('#welcomeHeading');
+
+            fireEvent.click(button);
+
+            expect(welcomeHeading).toHaveStyle("color: DarkGray;");
+        });
+    });
+
+    describe('#addColourHistory', () => {
+        const addColourHistory = require('../script').addColourHistory;
+
+        beforeAll(() => {
+            globalJquery = global.$;
+            global.$ = require("jquery");
+        });
+    
+        afterAll(() => {
+            global.$ = globalJquery;
+        });
+
+        it('append is called with colour html string', () => {
+            const appendSpy = jest.spyOn($.fn, "append");
+
+            addColourHistory("blue");
+
+            expect(appendSpy).toHaveBeenCalled();
+            expect(appendSpy).toHaveBeenCalledTimes(1);
+            expect(appendSpy).toHaveBeenCalledWith(
+                `<li class="list-group-item">blue</li>`
+            );
+        });
     });
 });
 

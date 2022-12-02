@@ -38,5 +38,5 @@ function addColourHistory(colour) {
 
 
 if (typeof module !== "undefined") {
-    module.exports = { getText, loadButtonActions };
+    module.exports = { getText, loadButtonActions, addColourHistory };
 }
