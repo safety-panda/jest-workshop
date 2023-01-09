@@ -55,7 +55,7 @@ npm test
 ````
 looks like one test passes and two are failing
 
-3.install jest for vs-code (here)[https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest]
+3.install jest for vs-code [here](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
 
 4.quit and restart vscode
 
