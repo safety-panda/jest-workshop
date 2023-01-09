@@ -6,6 +6,13 @@ we are using two pacakages from the testing-library: [DOM testing library](https
 babel is used to support testing jquery in jest (checkout package.json)
 it has bootstrap connected vid CND for aesthetics :sparkles:
 
+## requirements
+this project has the following requirements:
+- [vs code](https://code.visualstudio.com) 
+- [python 3](https://www.python.org/downloads/)
+- [nodejs v14.15 or higher](https://nodejs.org/en/)
+  - I like to use [nvm](https://www.linode.com/docs/guides/how-to-install-use-node-version-manager-nvm/) to manage my nodejs versions (if you choose to use nmv there is a `.nvmrc` file to use at the project root)
+
 ## setup
 1.create a virtual environment
 ```

@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "a django jquery test project",
   "main": "index.js",
+  "engines": {
+    "node": ">=14.15.0"
+  },
   "scripts": {
     "test": "jest"
   },
@@ -10,7 +13,7 @@
     "type": "git",
     "url": "git@gitlab.zoodigital.com:natasha-projects/testing-jquery/django-jquery.git"
   },
-  "author": "",
+  "author": "natasha",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.20.5",
